@@ -51,8 +51,8 @@ function Register() {
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             required
           />
+          <button type="submit"  className='bg-blue-600 text-white px-10 py-2 rounded-md hover:bg-blue-700 mt-7'>Register</button>
         </form>
-          <button type="submit"  className='bg-blue-600 text-white px-10 py-2 rounded-md hover:bg-blue-700 mt-14'>Register</button>
         <p>{message}</p>
       </div>
     );
