@@ -37,13 +37,13 @@ function Members() {
   
     return (
       <div>
-        <h2>Members Directory</h2>
-        <button onClick={handleLogout}>Logout</button>
-        <ul>
+        <h2 className='text-5xl font-bold italic pt-20'>Members Directory</h2>
+        <ul className=' pt-10 pl-10'>
           {members.map((member) => (
-            <li key={member._id}>{member.name} - {member.email}</li>
-          ))}
+              <li key={member._id} className='text-xl font-bold pt-1'>{member.name} - {member.email}</li>
+            ))}
         </ul>
+            <button onClick={handleLogout} className='bg-blue-600 text-white px-10 py-2 rounded-md hover:bg-blue-700 mt-10 ml-10'>Logout</button>
       </div>
     );
   }
