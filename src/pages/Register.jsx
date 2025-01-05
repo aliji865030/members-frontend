@@ -24,11 +24,12 @@ function Register() {
     };
   
     return (
-      <div>
-        <h2>Register</h2>
-        <form onSubmit={handleSubmit}>
+      <div className='flex flex-col justify-center items-center px-5 py-10 rounded-lg' style={{backgroundImage: "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"}}>
+        <h2 className='text-4xl font-bold'>Register</h2>
+        <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center gap-5 pt-10'>
           <input
             type="text"
+            className='py-2 px-5 rounded-lg text-xl'
             placeholder="Name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -36,6 +37,7 @@ function Register() {
           />
           <input
             type="email"
+            className='py-2 px-5 rounded-lg text-xl'
             placeholder="Email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -43,13 +45,14 @@ function Register() {
           />
           <input
             type="password"
+            className='py-2 px-5 rounded-lg text-xl'
             placeholder="Password"
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             required
           />
-          <button type="submit">Register</button>
         </form>
+          <button type="submit"  className='bg-blue-600 text-white px-10 py-2 rounded-md hover:bg-blue-700 mt-14'>Register</button>
         <p>{message}</p>
       </div>
     );

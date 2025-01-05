@@ -6,7 +6,7 @@ import Register from './pages/Register';
 
 function App() {
   return (
-    <div className='w-full h-screen flex justify-center items-start' 
+    <div className='w-full h-screen flex justify-center items-center' 
     style={{backgroundImage: "linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)"}}
     >
       <Router>

@@ -37,7 +37,7 @@ function Members() {
   
     return (
       <div>
-        <h2 className='text-5xl font-bold italic pt-20'>Members Directory</h2>
+        <h2 className='text-5xl font-bold italic pt-20 text-center'>Members Directory</h2>
         <ul className=' pt-10 pl-10'>
           {members.map((member) => (
               <li key={member._id} className='text-xl font-bold pt-1'>{member.name} - {member.email}</li>
