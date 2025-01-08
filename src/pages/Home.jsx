@@ -98,7 +98,7 @@ function Home() {
             {formState ? "Register" : "Login"}
           </button>
           <p className="text-sm">
-            {formData ? "already have an account" : "Sign Up"}{" "}
+            {formState ? "already have an account" : "Sign Up"}{" "}
             <span
               className="text-blue-700 font-bold cursor-pointer"
               onClick={handleFormState}
