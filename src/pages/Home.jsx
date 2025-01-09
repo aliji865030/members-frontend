@@ -37,7 +37,7 @@ function Home() {
   return (
     <div className="flex flex-col justify-center items-center">
       {loading && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
+        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 z-50">
           <div className="text-white text-xl">Loading...</div>
         </div>
       )}

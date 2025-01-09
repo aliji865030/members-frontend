@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
 function Members() {
   const [members, setMembers] = useState([]);
@@ -36,31 +36,46 @@ function Members() {
   };
 
   return (
-    <div
-      className=" w-2/3 px-5 sm:px-10 py-10 sm:py-14 rounded-lg "
-    >
-      <h2 className="text-5xl font-bold italic text-center">
+    <div className="w-full lg:w-2/3 px-5 sm:px-10 py-10 sm:py-14 rounded-lg">
+      <h2 className="text-5xl font-bold italic text-center mb-8">
         Members Directory
       </h2>
-      <ul className=" pt-10 pl-10 flex flex-col gap-5">
-        {members.map((member) => (
-          <li key={member._id} className="text-xl font-bold text-gray-800 flex justify-around items-center py-5 rounded-xl border-2 border-gray-500 shadow-xl"
-          style={{
-            backgroundImage: "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)",
-          }}>
-            <span>{member.name.toUpperCase()}</span> 
-            <span>{member.email}</span>
-            <span>{format(new Date(member.joinedDate),'dd/MM/yyyy')}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="overflow-x-auto">
+        <table className="min-w-full border-collapse border border-gray-300 shadow-md rounded-lg cursor-pointer">
+          <thead>
+            <tr className="bg-gray-200 text-left text-lg font-bold">
+              <th className="border border-gray-300 px-4 py-2">Name</th>
+              <th className="border border-gray-300 px-4 py-2">Email</th>
+              <th className="border border-gray-300 px-4 py-2">Join Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {members.map((member) => (
+              <tr
+                key={member._id}
+                className="hover:bg-gray-100 text-base font-medium"
+              >
+                <td className="border border-gray-300 px-4 py-2">
+                  {member.name.toUpperCase()}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {member.email}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {format(new Date(member.joinedDate), "dd/MM/yyyy")}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="flex justify-center items-center">
-      <button
-        onClick={handleLogout}
-        className="bg-blue-600 text-white px-10 py-3 rounded-full hover:bg-blue-700 mt-10 ml-10 w-8/12"
-      >
-        Logout
-      </button>
+        <button
+          onClick={handleLogout}
+          className="bg-blue-600 text-white px-10 py-3 rounded-full hover:bg-blue-700 mt-10 w-8/12"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );
